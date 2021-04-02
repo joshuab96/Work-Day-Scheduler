@@ -19,6 +19,6 @@ var Five = moment().hour(17).format("h")
 console.log(Nine, Ten, Eleven, Twelve, One, Two, Three, Four, Five)
 
 
-//Setting the start of day as 9am on any given day
+//how to compare current moment() to set the set moment().format("h")
 
 
