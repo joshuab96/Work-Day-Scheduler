@@ -21,4 +21,4 @@ console.log(Nine, Ten, Eleven, Twelve, One, Two, Three, Four, Five)
 
 //how to compare current moment() to set the set moment().format("h")
 
-
+moment().format("h").isSame(Nine.format("h"));
