@@ -10,9 +10,15 @@ setInterval(LiveTime, 1000);
 
 mainEl = $(".container")
 
-
 //Creating timeblocks via a for loop
 
+rowEl = $("<div></div>")
+hourEl = $("<div></div>")
+inputEl = $("<input></input>")
+saveBtnEl = $("<div></div>")
 
+for (i = 0; i < 9; i++) {
+    
+}
 
 
