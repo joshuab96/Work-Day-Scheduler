@@ -18,11 +18,19 @@ inputEl = $("<input></input>").addClass("form-control-plaintext description col"
 saveBtnEl = $("<div></div>").addClass("saveBtn button col submit d-flex h-100 ")
 iconEl = $("<i></i>").addClass("fas fa-save col justify-content-center align-self-center ")
 
- for (i = 0; i < 9; i++) {
+// Hours 9-5 with corresponding AM and PM displayed
+
+var timeDesc = {
+    hours:["9AM","10AM","11AM","12PM","1PM","2PM","3PM","4PM","5PM"]
+}
+
+// to dynamically append 8 timeblocks 9-5 to html page
+
+ for (i = 0; i < 10; i++) {
     $(mainEl).append(rowEl.clone());
     $(rowEl).append(hourEl, inputEl, saveBtnEl);
     $(saveBtnEl).append(iconEl);
-    $(hourEl).text([i+1] + "AM")
+    $(hourEl).text(timeDesc.hours[i])
     
 }
 
