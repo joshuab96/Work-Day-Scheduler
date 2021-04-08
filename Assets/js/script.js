@@ -15,13 +15,15 @@ mainEl = $(".container")
 rowEl = $("<div></div>").addClass("row time-block")
 hourEl = $("<div></div>").addClass("hour col")
 inputEl = $("<input></input>").addClass("form-control-plaintext description col")
-saveBtnEl = $("<div></div>").addClass("saveBtn button col submit ")
-iconEl = $("<i></i>").addClass("fas fa-save ")
+saveBtnEl = $("<div></div>").addClass("saveBtn button col submit d-flex h-100 ")
+iconEl = $("<i></i>").addClass("fas fa-save col justify-content-center align-self-center ")
 
  for (i = 0; i < 9; i++) {
     $(mainEl).append(rowEl.clone());
     $(rowEl).append(hourEl, inputEl, saveBtnEl);
     $(saveBtnEl).append(iconEl);
+    $(hourEl).text([i+1] + "AM")
+    
 }
 
 
