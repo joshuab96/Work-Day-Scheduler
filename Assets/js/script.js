@@ -12,13 +12,16 @@ mainEl = $(".container")
 
 //Creating timeblocks via a for loop
 
-rowEl = $("<div></div>")
-hourEl = $("<div></div>")
-inputEl = $("<input></input>")
-saveBtnEl = $("<div></div>")
+rowEl = $("<div></div>").addClass("row time-block")
+hourEl = $("<div></div>").addClass("hour col")
+inputEl = $("<input></input>").addClass("form-control-plaintext description col")
+saveBtnEl = $("<div></div>").addClass("saveBtn button col submit ")
+iconEl = $("<i></i>").addClass("fas fa-save ")
 
-for (i = 0; i < 9; i++) {
-    
+ for (i = 0; i < 9; i++) {
+    $(mainEl).append(rowEl.clone());
+    $(rowEl).append(hourEl, inputEl, saveBtnEl);
+    $(saveBtnEl).append(iconEl);
 }
 
 
