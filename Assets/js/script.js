@@ -6,7 +6,7 @@ $("#currentDay").text(moment().format("LLLL"))
 setInterval(LiveTime, 1000);
 
 
-//Document selectors
+//Container for the row elements
 
 mainEl = $(".container")
 
@@ -22,15 +22,21 @@ var timeDesc = {
 
  for (i = 0; i < 10; i++) {
 
-    rowEl = $("<div></div>").addClass("row time-block")
-    hourEl = $("<div></div>").addClass("hour col")
-    inputEl = $("<input></input>").addClass("form-control-plaintext description col")
-    saveBtnEl = $("<div></div>").addClass("saveBtn button col submit d-flex h-100 ")
-    iconEl = $("<i></i>").addClass("fas fa-save col justify-content-center align-self-center ")
+     //setting append hour, input field and savebtn container to the row
+    var rowEl = $("<div></div>").addClass("row time-block").append(hourEl,inputEl,saveBtnEl)
 
+    //adding classes to icon element for icon img and centering
+    var iconEl = $("<i></i>").addClass("fas fa-save col justify-content-center align-self-center ")
+
+    //setting append icon element to saveBtnEl container
+    var saveBtnEl = $("<div></div>").addClass("saveBtn button col submit d-flex h-100").append(iconEl)
+
+    //adding classes for both the displayed hour and input field
+    var hourEl = $("<div></div>").addClass("hour col")
+    var inputEl = $("<input></input>").addClass("form-control-plaintext description col")
+   
+    //appending the complete row to container, adding 9AM - 5PM hour increments on left hand side and adding classHourid number to each input field
     $(mainEl).append(rowEl.clone());
-    $(rowEl).append(hourEl, inputEl, saveBtnEl);
-    $(saveBtnEl).append(iconEl);
     $(hourEl).text(timeDesc.hours[i]);
     $(inputEl).addClass(timeDesc.classHourid[i]);
     
@@ -38,4 +44,4 @@ var timeDesc = {
 
 // Displaying colour coded blocks in regards to hour time whether it is the past, preset or future, using grey, green or red.
 
-
+// if (moment().format("H")
