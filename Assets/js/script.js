@@ -65,5 +65,5 @@ function saveUserInputData() { };
 var formnInputEl = $(".description")
 
 $(".saveBtn").click(function () {
-
+    console.log(formnInputEl.val());
 });
