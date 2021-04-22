@@ -39,7 +39,7 @@ for (i = 0; i <= timeDesc.hours.length; i++) {
 
     //adding classes for both the displayed hour and input field
     var hourEl = $("<div>").addClass("hour col")
-    var inputEl = $("<input>").addClass("form-control-plaintext description col").attr('id', 'userInput')
+    var inputEl = $("<input>").addClass("form-control-plaintext description col ").attr('id', 'userInput')
 
     //appending the complete row to container, adding 9AM - 5PM hour increments on left hand side and adding classHourid number to each input field
     $(mainEl).append(rowEl.clone());
@@ -56,14 +56,29 @@ for (i = 0; i <= timeDesc.hours.length; i++) {
     }
 }
 
-// //users inputs are saved and remain when the page is refreshed
 
-//access value from input field
 
-function saveUserInputData() { };
+//Input field selector
+var formInputEl = 10
+// $(".description");
 
-var formnInputEl = $(".description")
-
+//Click event handler
 $(".saveBtn").click(function () {
-    console.log(formnInputEl.val());
+    saveToLocalStorage();
 });
+
+
+//to save the user data in the input field 
+function saveToLocalStorage(formInputEl) {
+    let userDescription = formInputEl.val();
+    localStorage.setItem("storedDescription", userDescription);
+
+};
+
+//pull user data from storage and display in input field
+function displayUserData(formInputEl, userDescription) {
+    localStorage.getItem("storedDescription");
+    userDescription = userDescription.val(userData);
+}
+displayUserData();
+
