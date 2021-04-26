@@ -27,7 +27,7 @@ var timeDesc = {
 // including 
 
 for (i = 0; i <= timeDesc.hours.length; i++) {
-    console.log(i)
+
     //setting append hour, input field and savebtn container to the row
     var rowEl = $("<div>").addClass("row time-block").append(hourEl, inputEl, saveBtnEl)
 
@@ -57,28 +57,42 @@ for (i = 0; i <= timeDesc.hours.length; i++) {
 }
 
 
+// To save user data and retain information when refreshed or returning to the page
 
-//Input field selector
-var formInputEl = 10
-// $(".description");
+//button selector
+var saveBtn = $(".saveBtn");
 
-//Click event handler
-$(".saveBtn").click(function () {
-    saveToLocalStorage();
-});
+//input field selector
+var inputValue = $('.description').val()
 
-
-//to save the user data in the input field 
-function saveToLocalStorage(formInputEl) {
-    let userDescription = formInputEl.val();
-    localStorage.setItem("storedDescription", userDescription);
-
+for (let i = 0; i < saveBtn.length; i++) {
+    saveBtn[i].addEventListener('click', function (e) {
+        console.log(e.target);
+    })
 };
 
-//pull user data from storage and display in input field
-function displayUserData(formInputEl, userDescription) {
-    localStorage.getItem("storedDescription");
-    userDescription = userDescription.val(userData);
+function saveToLocalStorage(e) {
+
 }
-displayUserData();
+
+
+// //Click event handler
+// $(".saveBtn").click(function () {
+//     saveToLocalStorage();
+// });
+
+
+// //to save the user data in the input field 
+// function saveToLocalStorage(formInputEl) {
+//     let userDescription = formInputEl.val();
+//     localStorage.setItem("storedDescription", userDescription);
+
+// };
+
+// //pull user data from storage and display in input field
+// function displayUserData(formInputEl, userDescription) {
+//     localStorage.getItem("storedDescription");
+//     userDescription = userDescription.val(userData);
+// }
+// displayUserData();
 
