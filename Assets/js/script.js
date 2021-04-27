@@ -71,37 +71,8 @@ $(".saveBtn").on('click', function (event) {
     console.log(event.target, hour);
 })
 
-//input field selector
-// var inputValue = $('.description').val()
 
-// for (let i = 0; i < saveBtn.length; i++) {
-//     saveBtn[i].addEventListener('click', function (e) {
-//         console.log(e.target);
-//     })
-// };
-
-// function saveToLocalStorage(e) {
-
-// }
-
-
-// //Click event handler
-// $(".saveBtn").click(function () {
-//     saveToLocalStorage();
-// });
-
-
-//to save the user data in the input field 
-// function saveToLocalStorage(formInputEl) {
-//     let userDescription = formInputEl.val();
-//     localStorage.setItem("storedDescription", userDescription);
-
-// };
-
-// //pull user data from storage and display in input field
-// function displayUserData(formInputEl, userDescription) {
-//     localStorage.getItem("storedDescription");
-//     userDescription = userDescription.val(userData);
-// }
-// displayUserData();
+// links to github repo and depliyed page
+// https://github.com/joshuab96/Work-Day-Scheduler.git
+// https://joshuab96.github.io/Work-Day-Scheduler/
 
