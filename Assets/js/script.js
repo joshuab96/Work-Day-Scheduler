@@ -32,14 +32,18 @@ for (i = 0; i <= timeDesc.hours.length; i++) {
     var rowEl = $("<div>").addClass("row time-block").append(hourEl, inputEl, saveBtnEl)
 
     //adding classes to icon element for icon img and centering
-    var iconEl = $("<i>").addClass("fas fa-save col justify-content-center align-self-center ")
+    var iconEl = $("<i>").addClass("fas fa-save col justify-content-center align-self-center ").attr('data-hour', timeDesc.hours[i])
 
     //setting append icon element to saveBtnEl container
-    var saveBtnEl = $("<div>").addClass("saveBtn button col submit d-flex h-100").append(iconEl)
+    var saveBtnEl = $("<div>");
+
+    saveBtnEl.append(iconEl)
+    saveBtnEl.addClass("saveBtn button col submit d-flex h-100")
+    saveBtnEl.attr('data-hour', timeDesc.hours[i])
 
     //adding classes for both the displayed hour and input field
     var hourEl = $("<div>").addClass("hour col")
-    var inputEl = $("<input>").addClass("form-control-plaintext description col ").attr('id', 'userInput')
+    var inputEl = $("<input>").addClass("form-control-plaintext description col ").attr('id', 'userInput').attr('data-hour', timeDesc.hours[i])
 
     //appending the complete row to container, adding 9AM - 5PM hour increments on left hand side and adding classHourid number to each input field
     $(mainEl).append(rowEl.clone());
@@ -57,23 +61,28 @@ for (i = 0; i <= timeDesc.hours.length; i++) {
 }
 
 
+
 // To save user data and retain information when refreshed or returning to the page
 
 //button selector
-var saveBtn = $(".saveBtn");
+$(".saveBtn").on('click', function (event) {
+    var hour = event.target.getAttribute("data-hour")
+    console.log(hour.val())
+    console.log(event.target, hour);
+})
 
 //input field selector
-var inputValue = $('.description').val()
+// var inputValue = $('.description').val()
 
-for (let i = 0; i < saveBtn.length; i++) {
-    saveBtn[i].addEventListener('click', function (e) {
-        console.log(e.target);
-    })
-};
+// for (let i = 0; i < saveBtn.length; i++) {
+//     saveBtn[i].addEventListener('click', function (e) {
+//         console.log(e.target);
+//     })
+// };
 
-function saveToLocalStorage(e) {
+// function saveToLocalStorage(e) {
 
-}
+// }
 
 
 // //Click event handler
@@ -82,7 +91,7 @@ function saveToLocalStorage(e) {
 // });
 
 
-// //to save the user data in the input field 
+//to save the user data in the input field 
 // function saveToLocalStorage(formInputEl) {
 //     let userDescription = formInputEl.val();
 //     localStorage.setItem("storedDescription", userDescription);
