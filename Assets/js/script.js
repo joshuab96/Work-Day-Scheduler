@@ -64,10 +64,9 @@ for (i = 0; i <= timeDesc.hours.length; i++) {
 
 // To save user data and retain information when refreshed or returning to the page
 
-//button selector
+//button selector and event target
 $(".saveBtn").on('click', function (event) {
     var hour = event.target.getAttribute("data-hour")
-    console.log(hour.val())
     console.log(event.target, hour);
 })
 
