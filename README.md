@@ -16,5 +16,5 @@ A  simmple Work Day Scheduler designed to keep track of tasks on a regular 9 -5 
 ##### Links
 
 [GitHub Repository](https://github.com/joshuab96/Work-Day-Scheduler.git)
-[GitHub Repository](https://joshuab96.github.io/Work-Day-Scheduler/)
+[GitHub Page](https://joshuab96.github.io/Work-Day-Scheduler/)
 
