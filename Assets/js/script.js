@@ -43,7 +43,7 @@ for (i = 0; i <= timeDesc.hours.length; i++) {
 
     //adding classes for both the displayed hour and input field
     var hourEl = $("<div>").addClass("hour col")
-    var inputEl = $("<input>").addClass("form-control-plaintext description col ").attr('id', 'userInput').attr('data-hour', timeDesc.hours[i])
+    var inputEl = $("<input>").addClass("form-control-plaintext description col ").attr('id', 'userInput').attr('data-hour', timeDesc.hours[i]).val(localStorage.getItem(timeDesc.hours[i]));
 
     //appending the complete row to container, adding 9AM - 5PM hour increments on left hand side and adding classHourid number to each input field
     $(mainEl).append(rowEl.clone());
@@ -63,15 +63,19 @@ for (i = 0; i <= timeDesc.hours.length; i++) {
 
 
 // To save user data and retain information when refreshed or returning to the page
+//sace to local storage
 
-//button selector and event target
 $(".saveBtn").on('click', function (event) {
-    var hour = event.target.getAttribute("data-hour")
-    console.log(event.target, hour);
-})
+    var hour = $(event.target).attr("data-hour")
+    var userInput = $(event.target).parent().prev().val();
+    console.log(userInput);
+    localStorage.setItem(hour, userInput);
+
+});
 
 
-// links to github repo and depliyed page
+
+// links to github repo and deployed github page
 // https://github.com/joshuab96/Work-Day-Scheduler.git
 // https://joshuab96.github.io/Work-Day-Scheduler/
 
