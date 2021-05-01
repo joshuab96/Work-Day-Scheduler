@@ -63,13 +63,12 @@ for (i = 0; i <= timeDesc.hours.length; i++) {
 
 
 // To save user data and retain information when refreshed or returning to the page
-//sace to local storage
 
 $(".saveBtn").on('click', function (event) {
     var hour = $(event.target).attr("data-hour")
     var userInput = $(event.target).parent().prev().val();
-    console.log(userInput);
     localStorage.setItem(hour, userInput);
+    console.log(userInput);
 
 });
 
