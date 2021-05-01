@@ -1,6 +1,6 @@
 ## Work Day Scheduler :clock3:
 
-A  simmple Work Day Scheduler designed to keep track of tasks on a regular 9 -5 working day.
+A  simple Work Day Scheduler designed to keep track of tasks on a regular 9 -5 working day.
 
 ##### Features
 * Dynamically updating current day and time display 
