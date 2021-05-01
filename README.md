@@ -7,6 +7,8 @@ A  simmple Work Day Scheduler designed to keep track of tasks on a regular 9 -5 
 * Colour coded time blocks representing the past, present and future hours of the day
 * Save button to save your inputs and come back to them at a later time
 
+<img src="Assets/Images/WorkDayScheduler.png" alt="Work Day Scheduler Snippet" width="450">
+
 ##### Technologies
 * HTML
 * CSS
